@@ -1,0 +1,227 @@
+<search>
+    
+     <entry>
+        <title>进程_线程_协程</title>
+        <url>https://shiliuyuan.github.io/post/2022-07-04-%E7%BA%BF%E7%A8%8B_%E8%BF%9B%E7%A8%8B_%E5%8D%8F%E7%A8%8B/</url>
+        <categories>
+          <category>notes</category>
+        </categories>
+        <tags>
+          <tag>理论</tag><tag>操作系统</tag>
+        </tags>
+        <content type="html"> 介绍进程、线程和协程之间的区别和联系。
+并发与并行 介绍进程、线程之前需要先了解并发与并行的概念。
+我们都知道，计算机的核心是CPU，就像人的大脑一样，它承担了所有的计算任务；而操作系统是计算机的管理者，类似人的思想，它负责任务的调度、资源的分配和管理，统领整个计算机硬件；应用程度则是具有每种功能的程序，类似于人的能力和技能，程度是运行于操作系统之上的。
+了解了计算机的基础工作原理后再来介绍并发与并行的概念。
+并发：再操作系统中，某一个时间段，几个程序可以再同一个CPU上运行（因为计算机的切换周期很短，因此可以看作宏观层面上的同时运行），但在任意一个时间点上，只有一个程序在CPU上运行。
+即也就是正常人一个时间点只能去做一件事。但可以选择一天做两件事，比如上7点学数学、8点学英语、9点继续学数学….如此循环，但按照天这个单位计时的时候，那么就是你一天同时做了两件事。
+并行：当操作系统有多个CPU时候，就是人类的一个小团队，一个CPU处理A线程，另一个处理B线程，两个线程互不抢占CPU资源，可以同时进行，这种方式称为并行。也就是一个团队里，人员A负责社会调研，人员B负责查找资料…，每个人可以同一时间做不同的事，称为并行。
+图示如下：
+其中事件A和事件B是并发、事件C和事件D是并发；事件A和事件C是并行、事件B和事件D是并行。
+进程 进程是操作系统进行资源分配和调度的一个基本单位。我们的程度是一个二进制的可执行文件，运行这个可执行文件后，它会被装载到内存中，接着CPU会执行程序中的每一条执行，那么这个运行中的程序，被称为进程。
+多进程实际上是一种并发操作，接下来我们将上面的处理器核1的整条线路换一种画法，就会更加直观。
+上图所示的进程1与进程2是在同一块处理器核心上执行，进程1对应的是事件A，也即程序A，进程2对应的是事件B，也就是程序B。由于计算机交替执行的速度非常快，因此我们会有一种多个程序并行的错觉。实际上是并发。
+线程 线程是进程的子任务，是CPU调度和分派的基本单位，用于保证程序的实时性，实现进程内部的并发；线程是操作系统可识别的最小执行和调度单位。每个线程都独自占用一个虚拟处理器；独自的寄存器组，指令计数器和处理器状态。每个线程完成不同的任务。但是共享同一地址空间，打开的文件队列和其它的内核资源。
+简单的说，进程就是你正在做的事，一次只能做一件事。线程则是你运行大脑，小脑等大脑部件。它们共享一块大脑，但各自又分工不同，协同完成同一任务。如下图：
+协程 协程则是更小的单位，是一种基于线程之上的更加轻量级的存在，这种由程序员自己写程序来管理的轻量级线程叫做【用户空间线程】。一个线程可以有多个协程。
+协程的特点
+线程的切换由操作系统负责调度，协程由用户自己进行调度，因此减少了上下文切换，提高了效率。 线程的默认Stack大小是1M，而协程更轻量，接近1K。因此可以在相同的内存中开启更多的协程。 由于在同一个线程上，因此可以避免竞争关系而使用锁。 适用于被阻塞的，且需要大量并发的场景。但不适用于大量计算的多线程，遇到此种情况，更好实用线程去解决。 线程、协程、进程之间的包含关系图如下：
+此外，操作系统还提供了各进程、各线程、个协程之间的信息交换管理机制。如锁、通道等，暂时未作详细了解，后续单开文章叙述。
+总结 操作系统的设计，因此可以归纳为以下三点：
+以多进程的形式，允许多个任务同时运行。（单核CPU内为并发是伪同时） 以多线程的形式，将一个任务拆分成不同的子任务运行。 提供了一种程序员可管理的更小的单位协程。加速信息间的传输和交换。同时更充分利用计算机资源。 提供了各种机制间的管理和交换机制。保证系统的正常运行。 参考：
+https://www.cnblogs.com/Survivalist/p/11527949.html
+https://www.ruanyifeng.com/blog/2013/04/processes_and_threads.html
+https://www.zhihu.com/question/44087187/answer/2062919643
+</content>
+    </entry>
+    
+     <entry>
+        <title>ubuntu深度学习环境配置</title>
+        <url>https://shiliuyuan.github.io/post/2022-07-02-ubuntu%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+        <categories>
+          <category>tools</category>
+        </categories>
+        <tags>
+          <tag>深度学习</tag><tag>AI</tag>
+        </tags>
+        <content type="html"> 本文为记录了在配置linux服务器时候使用的各种命令及操作。
+Linux服务器创建用户 进入管理员用户，一般慎用，建议只在创建用户的时候使用，更新服务器中的应用
+sudo susudo apt-get update创建用户并在home文件夹下生成相应的文件夹，以下均用AAA表示用户名，并设置bash登录
+useradd -m AAA -s /bin/bash为该用户设置密码
+passwd AAA为该用户授权sudo权限，使其可以使用系统命令
+usermod -a -G sudo AAA通过以上步骤，一个可以使用的用户就创建完成了，下面将描述如何在同一局域网下访问该服务器
+通过同一局域网访问服务器 在服务器上使用命令ifconfig -a查看服务器的ip地址
+安装openssh-server
+sudo apt-get install openssh-server在windows下安装xshell、winscp等软件
+以xshell为例，winscp同理，主机地方填入之前用ifconfig -a查到的ip地址
+用户身份验证填入对应用户的账号名和密码，然后点击连接即可连接。
+在用户下创建pytorch环境 可在windows下下载linux版本的anaconda，然后通过winscp传输到服务器上进行安装，anaconda可通过以下方式下载：
+anconda官网 如需下载老版本的anconda，也可访问清华源 下载cuda和cudnn
+cuda可通过Nvidia官网下载，注意下载与linux系统版本一致的cuda，也可通过清华源下载 cudnn也可通过Nvidai官网下载，注意与cuda的版本对应关系 下载pytorch和torchvision，这里注意下载gpu版本的
+一般访问清华源，通过此地址下载对应版本的安装包 也可以直接使用pytorch官网提供的命令安装，一般不建议这种安装方式，虽然方便，但容易出现下载困难，版本不对等问题 通过以上步骤，我们准备了anaconda、cuda、cudnn、和gpu版的pytorch、torchvision等安装包
+下面进行安装，注：下面使用到的均是下载的安装包的全称，这里只简写为安装包的名字：
+通过winscp将上述安装包传输到linux服务器中
+安装anaconda
+bash anaconda配置环境变量
+nano ~/.bashrcexport PATH=/home/用户名/anaconda3/bin:$PATHsource ~/.bashrc解压cudnn的压缩包，然后将其中的lib文件夹下的文件复制到anaconda安装目录下的lib文件夹中
+tar zxvf cudnn -C 指定路径安装cuda
+conda install - -offline cuda安装pytorch
+conda install - -offline pytorch安装torchvision
+conda install - -offline torchvision</content>
+    </entry>
+    
+     <entry>
+        <title>Go基础</title>
+        <url>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</url>
+        <categories>
+          <category>notes</category>
+        </categories>
+        <tags>
+          <tag>Go</tag><tag>Programing</tag>
+        </tags>
+        <content type="html"> 本文主要用于记录Go学习内容等。
+前景及学习路线 go的优势
+下图为各个语言的学习容易程度和运行效率图
+如图所示，go在学习难度上低于java、c&#43;&#43;等语言，在运行效率上大于Java
+Go适合做什么
+服务端开发 分布式系统、微服务 网络编程 区块链开发 内存KV数据库，例如blotDB、levelDB 云平台 学习前景
+目前Go语言已经⼴泛应用于人工智能、云计算开发、容器虚拟化、⼤数据开发、数据分析及科学计算、运维开发、爬虫开发、游戏开发等领域。
+Go语言简单易学，天生支持并发，完美契合当下高并发的互联网生态。Go语言的岗位需求持续高涨，目前的Go程序员数量少，待遇好。
+抓住趋势，要学会做一个领跑者而不是跟随者。
+国内Go语言的需求潜力巨大，目前无论是国内大厂还是新兴互联网公司基本上都会有Go语言的岗位需求。
+go学习路线
+开发环境 Go开发环境安装 安装包下载地址为：go下载
+windows安装
+根据上述地址下载windows的安装包如下：
+下载双击，一路下一步安装
+设置环境变量
+在Windows 10下，你可以通过在系统“控制面板”中，“高级”标签上的“环境变量”按钮来设置环境变量。 Windows的一些版本通过系统“控制面板”中的“高级系统设置”选项提供此控制板。
+在环境变量path中添加如下变量：
+验证go安装
+&amp;gt; go version若输出版本信息，则表示安装成功
+ubuntu安装
+同样打开安装包下载地址，下载二进制包
+如图所示，右键复制链接地址
+在ubuntu中下载安装包到当前目录下
+$wget https://go.dev/dl/go1.18.3.linux-amd64.tar.gz将下载的二进制包解压至 /usr/local目录。
+tar -C /usr/local -xzf go1.18.3.linux-amd64.tar.gz这可以通过将以下行附加到/etc/profile文件（对于系统范围的安装）或$HOME/.profile文件（对于当前用户安装）来完成：
+$nano /etc/profile或$nano ~/.profile在文件末尾添加export PATH=$PATH:/usr/local/go/bin验证go安装
+$go version若输出go版本信息，则表示安装成功
+集成开发环境 VSCode VSCode在windows下安装，在ubuntu下一般为服务器，不进行安装
+VSCode下载地址为：https://code.visualstudio.com/
+下载完成后直接双击程序，然后一直下一步进行安装。
+VSCode汉化
+点击插件，搜索chinese插件进行安装，将VSCode汉化
+VSCode配置go环境
+启动vscode选择插件-&amp;gt;搜go选择Go for Visual Studio Code插件点击安装即可。如图：
+安装go开发工具包
+在Go语言开发的时候为我们提供诸如代码提示、代码自动补全等功能。
+这一步需要连接外网，国内网络无法访问，如果无法连接外围，则自行百度解决方案。
+Windows平台按下Ctrl&#43;Shift&#43;P，Mac平台按Command&#43;Shift&#43;P，这个时候VS Code界面会弹出一个输入框，我们在这个输入框中输入&amp;gt;go:install，下面会自动搜索相关命令，我们选择Go:Install/Update Tools这个命令，点击安装，选择所有工具，点击确定进行安装；如下面两图所示：
+其它工具 Git安装 windows安装git
+直接去官网下载git，双击安装，一路下一步即可
+ubuntu安装git
+$sudo apt install gitGo了解 Hello World 学习一门语言第一个程序都是Hello Word，接下来将使用go输出Hello World，创建hello.go文件，编辑该文件内容如下：
+// 该代码仅做示范用，具体内容后续解释package mainimport &amp;quot;fmt&amp;quot;func main(){fmt.Println(&amp;quot;Hello World!&amp;quot;)}运行代码：
+$go run hello.go输出：
+Hello World!或者构建程序
+$go bulid hello.gowindows下会生成hello.exe可执行文件，双击即可运行，linux下则会生成二进制文件，可直接执行
+Go基础概念 go使用的是以go结尾的文件
+Go的基本思想 Less can be more 大道至简,小而蕴真 让事情变得复杂很容易，让事情变得简单才难 深刻的工程文化
+Go的优点 静态编译，编译好后，扔服务器直接运行。 简单的思想，没有继承，多态，类等。 丰富的库和详细的开发文档。 语法层支持并发，和拥有同步并发的channel类型，使并发开发变得非常方便。 简洁的语法，提高开发效率，同时提高代码的阅读性和可维护性。 超级简单的交叉编译，仅需更改环境变量。 复杂度低，速度快，几乎赶上C和C&#43;&#43; Go 的特征 自动立即回收。 更丰富的内置类型。 函数多返回值。 错误处理。 匿名函数和闭包。 类型和接口。 并发编程。 反射。 语言交互性。 Go的标识符 与其它大部分语言相同，go的标识符遵循以下规则
+首字符可以是任意的Unicode字符或者下划线 剩余字符可以是Unicode字符、下划线、数字 字符长度不限 关键字和保留字 Go只有25个关键字
+break default func interface selectcase defer go map structchan else goto package switchconst fallthrough if range typecontinue for import return varGo还有37个保留字
+Constants: true false iota nilTypes: int int8 int16 int32 int64 uint uint8 uint16 uint32 uint64 uintptrfloat32 float64 complex128 complex64bool byte rune string errorFunctions: make len cap new append copy close deletecomplex real imagpanic recoverGo变量的作用域 声明在函数内部，是函数的本地值，类似private 声明在函数外部，是对当前包可见(包内所有.go文件都可见)的全局值，类似protect 声明在函数外部且首字母大写是所有包可见的全局值，类似public go变量声明 Go的变量声明主要有四种方式
+var（声明变量）, const（声明常量）, type（声明类型） ,func（声明函数）。Go数据类型 从大类上看，Go数据类型分为值类型和引用类型，下面展开介绍两种类型
+值类型 值类型又分为无符号类型、整型、浮点型，complex（可表述虚数），array等具体如下
+数据类型 描述 byte 类似 uint8 uint 32 或 64 位 uint8 无符号 8 位整型 (0 到 255) uint16 无符号 16 位整型 (0 到 65535) uint32 无符号 32 位整型 (0 到 4294967295) uint64 无符号 64 位整型 (0 到 18446744073709551615) int 与 uint 一样大小 int8 有符号 8 位整型 (-128 到 127) int16 有符号 16 位整型 (-32768 到 32767) int32 有符号 32 位整型 (-2147483648 到 2147483647) int64 有符号 64 位整型 (-9223372036854775808 到 9223372036854775807) float32 IEEE-754 32位浮点型数 float64 IEEE-754 64位浮点型数 complex32 32 位实数和虚数 complex64 64 位实数和虚数 rune 类似 int32 uintptr 无符号整型，用于存放一个指针 array 固定长度的数据 引用类型 主要包括以下三种：
+slice &amp;ndash; 序列数组(最常用) map &amp;ndash; 映射 chan &amp;ndash; 管道 Go数组Array 数组是具有相同唯一类型的一组已编号且长度固定的数据项序列，这种类型可以是任意的原始类型例如整型、字符串或者自定义类型。
+声明数组
+声明数组的格式如：
+var balance [10] float32初始化数组
+未声明数组，初始化数组有以下三种方式
+// 方式一var balance = [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}// 方式二balance := [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}// 方式三，会自行确定数组长度var balance = [...]float32{1000.0, 2.0, 3.4, 7.0, 50.0}// 将索引为 1 和 3 的元素初始化balance := [5]float32{1:2.0,3:7.0}针对已声明数组，使用以下方式进行赋值
+balance[4] = 50.0访问数组
+与其它语言访问数组方式类似
+var salary float32 = balance[9]Go切片 切片相当于一个可变长度的数组，相比数组更为灵活。其具体声明如下：
+slice1 := make([]float32, 0) // 长度为0的切片slice2 := make([]float32, 3, 5) // [0 0 0] 长度为3容量为5的切片fmt.Println(len(slice2), cap(slice2)) // 3 5 获取切片的长度和容量其中长度表示切片允许访问元素的个数，容量表示切片允许增长到的元素个数。
+使用切片示例代码如下：
+// 添加元素，切片容量可以根据需要自动扩展slice2 = append(slice2, 1, 2, 3, 4) // [0, 0, 0, 1, 2, 3, 4]fmt.Println(len(slice2), cap(slice2)) // 7 12// 子切片 [start, end)sub1 := slice2[3:] // [1 2 3 4]sub2 := slice2[:3] // [0 0 0]sub3 := slice2[1:4] // [0 0 1]// 合并切片combined := append(sub1, sub2...) // [1, 2, 3, 4, 0, 0, 0]由上述代码可以发现，切片创建时候会给切片分配一个容量，但这个容量是可以通过append函数扩增的。
+切片可以通过 切片名…展开为切片中的元素（如sub2&amp;hellip;）
+Go映射（字典） 字典和其它语言的字典几乎相同，这里不做过多介绍。
+Go信道（管道） 信道是带有类型的管道，你可以通过它用信道操作符 &amp;lt;- 来发送或者接收值。
+// 和映射与切片一样，信道在使用前必须创建：ch := make(chan int,2)ch &amp;lt;- 1 // 将1发送至信道 ch。v := &amp;lt;-ch // 从ch 接收值并赋予 v。其中 &amp;lt;-就是数据流的方向Go指针 与C/C&#43;&#43;相同，使用&amp;amp;取地址，使用*取地址中的值。
+Go运算符 与大部分流行的编程语言相同，Go的运算符包括：
+赋值运算符 算数运算符 逻辑运算符 位运算符 关系运算符 运算符的种类、优先级等都符合常识，且和C/C&#43;&#43;类似，这里不做过多介绍。
+Go流程控制语句 Go的流程控制语句分为条件语句和循环语句。
+条件语句 条件语句最经典的就是if…else语句，其基本形式为：
+if 条件A {语句A} else if 条件B {语句B} else{语句C}其中，else if 和 else可以省略。
+然后是switch语句，其语法形式如下：
+switch 变量A {case 变量B:语句Bcase 变量C:语句Cdefault:语句D}其中，变量A、变量B、变量C可以说任何类型，但类型必须相同，也可以使用case 变量A、变量B、…的形式同时选择多个变量。
+下面是其它语言都没有的select语句：
+package mainimport &amp;quot;fmt&amp;quot;func main() {var c1, c2, c3 chan intvar i1, i2 intselect {// 阻塞，c1中没有值，不执行case i1 = &amp;lt;-c1:fmt.Printf(&amp;quot;received &amp;quot;, i1, &amp;quot; from c1\n&amp;quot;)// 阻塞，c2没有缓冲空间，不执行case c2 &amp;lt;- i2:fmt.Printf(&amp;quot;sent &amp;quot;, i2, &amp;quot; to c2\n&amp;quot;)// 阻塞，c3没有值case i3, ok := (&amp;lt;-c3): // same as: i3, ok := &amp;lt;-c3if ok {fmt.Printf(&amp;quot;received &amp;quot;, i3, &amp;quot; from c3\n&amp;quot;)} else {fmt.Printf(&amp;quot;c3 is closed\n&amp;quot;)}// case都不执行，执行default输出no communicationdefault:fmt.Printf(&amp;quot;no communication\n&amp;quot;)} }循环语句 与其它语言不同，go不存在while语句，只有for循环语句，但for循环可以起到while循环的效果。
+// for循环的第一种用法，与其它语言的for循环相同，求1到10的和package mainimport &amp;quot;fmt&amp;quot;func main() {sum := 0for i := 0; i &amp;lt;= 10; i&#43;&#43; {sum &#43;= i}fmt.Println(sum)}下面这种方式为while循环
+// 省略for循环的第一个条件和第三个条件，则相当于while循环func main() {sum := 1for ; sum &amp;lt;= 10; {sum &#43;= sum}fmt.Println(sum)// 这样写也可以，更像 While 语句形式for sum &amp;lt;= 10{sum &#43;= sum}fmt.Println(sum)}下面为for循环的第三种用法，通常用于遍历数组、切片、字典、通道等
+package mainimport &amp;quot;fmt&amp;quot;func main() {map1 := make(map[int]float32)map1[1] = 1.0map1[2] = 2.0map1[3] = 3.0map1[4] = 4.0// 读取 key 和 valuefor key, value := range map1 {fmt.Printf(&amp;quot;key is: %d - value is: %f\n&amp;quot;, key, value)}// 读取 keyfor key := range map1 {fmt.Printf(&amp;quot;key is: %d\n&amp;quot;, key)}// 读取 valuefor _, value := range map1 {fmt.Printf(&amp;quot;value is: %f\n&amp;quot;, value)}}Go函数 Go使用关键字func定义函数，其定义方式如下：
+func 函数名(参数名 参数类型) 返回参数类型 {函数体}示例如下（求两数之和）：
+package mainimport &amp;quot;fmt&amp;quot;func sum(a int, b int) int {return a &#43; b}func main() {var a int = 1var b int = 2fmt.Println(sum(a, b))}Go结构体 和C/C&#43;&#43;中的结构体类似，不做过多介绍。
+Go并发 go 函数名(参数列表) //即可实现go并发关于 参考 https://www.topgoer.com https://www.runoob.com/go </content>
+    </entry>
+    
+     <entry>
+        <title>hugo使用GithubAction自动构建</title>
+        <url>https://shiliuyuan.github.io/post/2022-07-01-hugo%E4%BD%BF%E7%94%A8githubaction%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/</url>
+        <categories>
+          <category>tools</category>
+        </categories>
+        <tags>
+          <tag>programing</tag>
+        </tags>
+        <content type="html"> 本文记录了一个关于hugo在同一个github rpo的不同branch上进行构建网站的过程。
+在本地的博客目录下新建.github/workflows文件夹在该文件夹下新建一个main.yml文件写入内容如下：
+on:push:branches:- hugo # 当前博客源码所在的分支pull_request:jobs:deploy:runs-on: ubuntu-20.04concurrency:group: ${{ github.workflow }}-${{ github.ref }}steps:- uses: actions/checkout@v3with:submodules: true # Fetch Hugo themes (true OR recursive)fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod- name: Setup Hugouses: peaceiris/actions-hugo@v2with:hugo-version: &#39;0.101.0&#39; # hugo的版本号，根据自己需求修改# extended: true- name: Buildrun: hugo --minify # 构建hugo站点文件，默认构建在./public文件夹下- name: Deployuses: peaceiris/actions-gh-pages@v3# if: ${{ github.ref == &#39;refs/heads/main&#39; }}with:github_token: ${{ secrets.GITHUB_TOKEN }}publish_dir: ./public # 要上传到其它分支的文件夹，即站点文件夹publish_branch: master # 要上传的分支这种情况下，上传脚本就很简单了，如下：
+echo -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;cp -r ./content/post/images ./content/msg=&amp;quot;rebuilding site by action&amp;quot;git add -Agit commit -m &amp;quot;$msg&amp;quot;git push origin hugorm -rf ./content/images简单的介绍一下Github Actiton的一种用法，不仅适用于hugo博客站点的搭建，同样适用于其它同类型的博客如hexo，jekyll等，修改其中的工具和版本以及运行命令即可。详细的请见github仓库中的action选项。
+这里简单说一下图像问题，在content目录下，的post目录下设置 images/文件名/图像名为图像保存路径。在typora中使用 /images/文件名/图像名的方式去设置路径。
+注意：只有前面带/才能正常编译成网站路径，而网站的根目录是content目录，因此脚本中在上传图像时候需要把图像复制到content目录中，待站点构建完成后，再删除该目录。
+</content>
+    </entry>
+    
+     <entry>
+        <title>Hugo自动上传脚本</title>
+        <url>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</url>
+        <categories>
+          <category>tools</category>
+        </categories>
+        <tags>
+          <tag>shall</tag><tag>Programing</tag>
+        </tags>
+        <content type="html"> 本文制作了一个hugo自动上传脚本，用于个人博客的自动化上传。
+首先本文是基于如下的情况下制作的
+系统为windows系统
+windows已安装git程序，用于运行shall脚本
+存在github仓库，仓库中存在hugo和master分支
+本地目录结构如下：
+-blog-hugo：博客主文件存储目录-.git：连接好自己github仓库的hugo分支-deploy.sh：脚本文件放置目录-master：生成站点存储目录-.git：连接好自己github仓库的master分支deploy.sh文件内容如下：
+#!/bin/bashecho -e &amp;quot;\033[0;32mDeploying updates to GitHub...\033[0m&amp;quot;# rm -rf ./public# rm -rf ./imagespython3 ./gen_readme.pyrm -rf .hugo_build.lockrm -rf ../master/*hugo -d ../mastercd ../master# git init .# Add changes to git.git add -A# Commit changes.msg=&amp;quot;rebuilding site by hugo&amp;quot;if [[ $# -eq 1 ]];then msg=&amp;quot;$1&amp;quot;figit commit -m &amp;quot;$msg&amp;quot;# Push source and build repos.git push origin masterif [[ $? -ne 0 ]];thenecho &amp;quot;push master branch to remote failed&amp;quot;exit 1ficd ../hugo# Checkout to hugpgit checkout hugoif [[ $? -ne 0 ]];thenecho &amp;quot;checkout master failed&amp;quot;exit 1figit add -Agit commit -m &amp;quot;$msg&amp;quot;git push origin hugoif [[ $? -ne 0 ]];thenecho &amp;quot;push hugo branch to remote failed&amp;quot;exit 1fi# Back to mastergit checkout master在该文件所在目录打开git运行如下代码，即可生成上传代码且生成博客。
+./deploy.sh</content>
+    </entry>
+    
+     <entry>
+        <title>想成为的样子</title>
+        <url>https://shiliuyuan.github.io/post/2022-07-01-%E6%83%B3%E6%88%90%E4%B8%BA%E7%9A%84%E6%A0%B7%E5%AD%90/</url>
+        <categories>
+          <category>感想</category>
+        </categories>
+        <tags>
+          <tag>写作</tag>
+        </tags>
+        <content type="html"> 作为我的第一篇个人总结，思考了许久写些什么好。简单的记录一下我想成为一个什么样的人吧，指导一下以后的发展方向。
+曾经的我，年少轻狂，总觉得自己只要努力去做一件事就一定能做成。想学计算机，认为计算机是一个很高效的工具，且有助于改善我的经济条件。那个时候，我忽略了人的时间和精力是有限的，每个人学习的基础也是不同的。这算是我思考成长的第一步，略显稚嫩。
+后来，我如愿以偿的转到了自己想学的计算机专业，经历一段时间的学习后，发现学习进展并不是很理想。那个时候的我精神略显恍惚，陷入了一种深深的自我怀疑。然后我开始重新的审视自己，觉得基础对于学习能力是至关重要的，此外还有时间和精力的成本。我们不能把时间和精力消耗在低收益的事情上。此时的我，较为功利，陷入了选择，犹豫却不愿意努力的怪圈。
+再然后，我的想法开始发生转变，我希望成为下面这种人：
+做一个靠谱的人。 拥有一种平和的心态，少一些抱怨和戾气。不管遇到什么事都能保证情绪的稳定，心态的平和。 能够与人有效的沟通，更有效的发现身边的人与自己的共赢点。 拥有使用计算机提高工作效率，快速实现自己需求，较大程度上发挥计算机的作用的能力。 能够真正意义上的去学习一些，看起来没什么用的能力。 想成为这样的人，需要做到：
+多读一些人文，哲学，史学的书籍，提高自己的文学素养。 持续学习技术，深度学习计算机各领域的技术。当然，只能择其一较为熟练后再进行下一个方向的学习。 保证自己有一定的收入水平，提高自己的抗风险能力。 从沟通能力、技术能力，生活能力等方面提高自己。 自我感觉，可能方向还是略显功利，后续再慢慢调整。总而言之，希望自己慢慢变好，身边的人也慢慢变好。
+</content>
+    </entry>
+    
+</search>

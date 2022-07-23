@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>十六源</title>
+    <link>https://shiliuyuan.github.io/</link>
+    <description>Recent content on 十六源</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Mon, 04 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://shiliuyuan.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>进程_线程_协程</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-04-%E7%BA%BF%E7%A8%8B_%E8%BF%9B%E7%A8%8B_%E5%8D%8F%E7%A8%8B/</link>
+      <pubDate>Mon, 04 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-04-%E7%BA%BF%E7%A8%8B_%E8%BF%9B%E7%A8%8B_%E5%8D%8F%E7%A8%8B/</guid>
+      <description>&lt;p&gt;介绍进程、线程和协程之间的区别和联系。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ubuntu深度学习环境配置</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-02-ubuntu%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 02 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-02-ubuntu%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;本文为记录了在配置linux服务器时候使用的各种命令及操作。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Go基础</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;p&gt;本文主要用于记录Go学习内容等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo使用GithubAction自动构建</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-01-hugo%E4%BD%BF%E7%94%A8githubaction%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-01-hugo%E4%BD%BF%E7%94%A8githubaction%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/</guid>
+      <description>&lt;p&gt;本文记录了一个关于hugo在同一个github rpo的不同branch上进行构建网站的过程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo自动上传脚本</title>
+      <link>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;本文制作了一个hugo自动上传脚本，用于个人博客的自动化上传。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>想成为的样子</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-01-%E6%83%B3%E6%88%90%E4%B8%BA%E7%9A%84%E6%A0%B7%E5%AD%90/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-01-%E6%83%B3%E6%88%90%E4%B8%BA%E7%9A%84%E6%A0%B7%E5%AD%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>关于十六源</title>
+      <link>https://shiliuyuan.github.io/about/</link>
+      <pubDate>Wed, 29 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/about/</guid>
+      <description>关于我 分享生活和科研的日常。 研究方向： 计算机科学/视觉 小样本学习/元学习目标检测 兴趣方向： 后端开发 前端开发 使用语言： Python LaTeX HTML Golang 联系方式 QQ：3</description>
+    </item>
+    
+  </channel>
+</rss>

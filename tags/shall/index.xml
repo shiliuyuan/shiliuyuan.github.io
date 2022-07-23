@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>shall on 十六源</title>
+    <link>https://shiliuyuan.github.io/tags/shall/</link>
+    <description>Recent content in shall on 十六源</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 30 Jun 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://shiliuyuan.github.io/tags/shall/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo自动上传脚本</title>
+      <link>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;本文制作了一个hugo自动上传脚本，用于个人博客的自动化上传。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

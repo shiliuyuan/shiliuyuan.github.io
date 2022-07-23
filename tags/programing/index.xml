@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programing on 十六源</title>
+    <link>https://shiliuyuan.github.io/tags/programing/</link>
+    <description>Recent content in Programing on 十六源</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://shiliuyuan.github.io/tags/programing/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go基础</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;p&gt;本文主要用于记录Go学习内容等。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>hugo使用GithubAction自动构建</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-01-hugo%E4%BD%BF%E7%94%A8githubaction%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-01-hugo%E4%BD%BF%E7%94%A8githubaction%E8%87%AA%E5%8A%A8%E6%9E%84%E5%BB%BA/</guid>
+      <description>&lt;p&gt;本文记录了一个关于hugo在同一个github rpo的不同branch上进行构建网站的过程。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hugo自动上传脚本</title>
+      <link>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 30 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-06-30-hugo%E8%87%AA%E5%8A%A8%E4%B8%8A%E4%BC%A0%E8%84%9A%E6%9C%AC/</guid>
+      <description>&lt;p&gt;本文制作了一个hugo自动上传脚本，用于个人博客的自动化上传。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

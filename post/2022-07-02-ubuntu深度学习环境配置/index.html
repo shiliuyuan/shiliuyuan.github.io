@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <link href="https://shiliuyuan.github.io/css/prism.css" rel="stylesheet" />
+    <script src="https://shiliuyuan.github.io/js/prism.js"></script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>ubuntu深度学习环境配置 - 十六源</title>
+    <meta name="keywords" content="十六源,独立,博客,程序员,个人,思考,读书,笔记,技术,分享,python,Golang">
+    
+    <meta property="og:title" content="ubuntu深度学习环境配置">
+    <meta property="og:site_name" content="十六源">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="ubuntu深度学习环境配置 - 十六源" />
+    <meta name="description" content="十六源 | 博客 | 软件 | A | python | Golang"> 
+    <link rel="shortcut icon" href="https://shiliuyuan.github.io/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="https://shiliuyuan.github.io/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="https://shiliuyuan.github.io/img/apple-touch-icon.png" />
+    <link href="https://shiliuyuan.github.io/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="https://shiliuyuan.github.io/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="https://shiliuyuan.github.io/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="https://shiliuyuan.github.io/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="https://shiliuyuan.github.io/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">十六源</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">逢山开路，遇水搭桥</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="https://shiliuyuan.github.io/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="https://shiliuyuan.github.io/post/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="https://shiliuyuan.github.io/about/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="https://shiliuyuan.github.io/post/2022-07-02-ubuntu%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" itemprop="url">
+        ubuntu深度学习环境配置
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2022-07-02">
+    2022-07-02
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="https://shiliuyuan.github.io/categories/tools" itemprop="url" rel="index">
+        <span itemprop="name">tools</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">991 字 ~2分钟</span>
+</span>
+      
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    <p>本文为记录了在配置linux服务器时候使用的各种命令及操作。</p>
+<h1 id="linux服务器创建用户">Linux服务器创建用户</h1>
+<ol>
+<li>
+<p>进入管理员用户，一般慎用，建议只在创建用户的时候使用，更新服务器中的应用</p>
+<pre><code class="language-bash">sudo su
+sudo apt-get update
+</code></pre>
+</li>
+<li>
+<p>创建用户并在home文件夹下生成相应的文件夹，以下均用AAA表示用户名，并设置bash登录</p>
+<pre><code class="language-bash">useradd -m AAA -s /bin/bash
+</code></pre>
+</li>
+<li>
+<p>为该用户设置密码</p>
+<pre><code class="language-bash">passwd AAA
+</code></pre>
+</li>
+<li>
+<p>为该用户授权sudo权限，使其可以使用系统命令</p>
+<pre><code class="language-bash">usermod -a -G sudo AAA
+</code></pre>
+</li>
+</ol>
+<p>通过以上步骤，一个可以使用的用户就创建完成了，下面将描述如何在同一局域网下访问该服务器</p>
+<h1 id="通过同一局域网访问服务器">通过同一局域网访问服务器</h1>
+<ol>
+<li>
+<p>在服务器上使用命令ifconfig -a查看服务器的ip地址</p>
+</li>
+<li>
+<p>安装openssh-server</p>
+<pre><code class="language-bash">sudo apt-get install openssh-server
+</code></pre>
+</li>
+<li>
+<p>在windows下安装xshell、winscp等软件</p>
+</li>
+</ol>
+<p>以xshell为例，winscp同理，主机地方填入之前用ifconfig -a查到的ip地址</p>
+<p><img src="https://shiliuyuan.github.io/images/2022-07-02-ubuntu%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/01.png" alt=""></p>
+<p>用户身份验证填入对应用户的账号名和密码，然后点击连接即可连接。</p>
+<p><img src="https://shiliuyuan.github.io/images/2022-07-02-ubuntu%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/02.png" alt=""></p>
+<h1 id="在用户下创建pytorch环境">在用户下创建pytorch环境</h1>
+<p>可在windows下下载linux版本的anaconda，然后通过winscp传输到服务器上进行安装，anaconda可通过以下方式下载：</p>
+<ol>
+<li><a href="https://repo.anaconda.com/archive/Anaconda3-2021.05-Linux-x86_64.sh">anconda官网</a></li>
+<li>如需下载老版本的anconda，也可访问<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华源</a></li>
+</ol>
+<p>下载cuda和cudnn</p>
+<ol>
+<li>cuda可通过<a href="https://developer.nvidia.com/zh-cn/cuda-toolkit">Nvidia官网</a>下载，注意下载与linux系统版本一致的cuda，也可通过清华源下载</li>
+<li>cudnn也可通过Nvidai官网下载，注意与cuda的版本对应关系</li>
+</ol>
+<p>下载pytorch和torchvision，这里注意下载gpu版本的</p>
+<ol>
+<li>一般访问清华源，通过<a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/linux-64/">此地址</a>下载对应版本的安装包</li>
+<li>也可以直接使用<a href="https://pytorch.org/">pytorch官网</a>提供的命令安装，一般不建议这种安装方式，虽然方便，但容易出现下载困难，版本不对等问题</li>
+</ol>
+<p>通过以上步骤，我们准备了anaconda、cuda、cudnn、和gpu版的pytorch、torchvision等安装包</p>
+<p>下面进行安装，注：下面使用到的均是下载的安装包的全称，这里只简写为安装包的名字：</p>
+<ol>
+<li>
+<p>通过winscp将上述安装包传输到linux服务器中</p>
+</li>
+<li>
+<p>安装anaconda</p>
+<pre><code class="language-bash">bash anaconda
+</code></pre>
+</li>
+<li>
+<p>配置环境变量</p>
+<pre><code class="language-bash">nano ~/.bashrc
+export PATH=/home/用户名/anaconda3/bin:$PATH
+source ~/.bashrc
+</code></pre>
+</li>
+<li>
+<p>解压cudnn的压缩包，然后将其中的lib文件夹下的文件复制到anaconda安装目录下的lib文件夹中</p>
+<pre><code class="language-bash">tar zxvf  cudnn -C 指定路径
+</code></pre>
+</li>
+<li>
+<p>安装cuda</p>
+<pre><code class="language-bash">conda install - -offline cuda
+</code></pre>
+</li>
+<li>
+<p>安装pytorch</p>
+<pre><code class="language-bash">conda install - -offline pytorch
+</code></pre>
+</li>
+<li>
+<p>安装torchvision</p>
+<pre><code class="language-bash">conda install - -offline torchvision
+</code></pre>
+</li>
+</ol>
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="https://shiliuyuan.github.io/tags/%e6%b7%b1%e5%ba%a6%e5%ad%a6%e4%b9%a0" rel="tag" title="深度学习">#深度学习#</a>
+    
+    <a href="https://shiliuyuan.github.io/tags/ai" rel="tag" title="AI">#AI#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="https://shiliuyuan.github.io/post/2022-07-04-%E7%BA%BF%E7%A8%8B_%E8%BF%9B%E7%A8%8B_%E5%8D%8F%E7%A8%8B/" rel="next" title="进程_线程_协程">
+        <i class="fa fa-chevron-left"></i> 进程_线程_协程
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+        <a href="https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/" rel="prev" title="Go基础">
+        Go基础 <i class="fa fa-chevron-right"></i>
+        </a>
+    
+    </div>
+</div>
+      
+     
+     
+     
+
+
+
+
+     <div class="post-nav">
+<div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+    <div style="float:left;margin-top:0px;">
+    <img src="https://shiliuyuan.github.io/img/qrcode/qrcode_8cm.jpg" width="129px" height="129px"/>
+    <div style="text-align:center;">微信扫一扫交流</div>
+    </div>
+    <div>
+        <p style="margin-top:0px;">
+            标题：ubuntu深度学习环境配置
+        <br />作者：<a target="_blank" href="https://shiliuyuan.github.io/">十六源</a>
+        <br />QQ ：3320065001
+        <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+        </p>
+    </div>
+</div>
+<div class="clear"></div>
+</div>
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="https://shiliuyuan.github.io/img/author.jpg"
+        alt="十六源" />
+    <p class="site-author-name" itemprop="name">十六源</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        AI &amp; Programmer</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="https://shiliuyuan.github.io/post/">
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="https://shiliuyuan.github.io/categories/">      
+         
+        <span class="site-state-item-count">3</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="https://shiliuyuan.github.io/tags/">
+         
+        <span class="site-state-item-count">8</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/shiliuyuan/" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+        <span class="links-of-author-item">
+        <a href="https://www.zhihu.com/people/shiliuyuan-43" target="_blank" title="知乎">
+            <i class="fa fa-fw fa-globe"></i>
+            知乎
+        </a>
+        </span>
+    
+</div>
+
+
+      
+
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5pdhpgkshgi&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
+
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#linux服务器创建用户">Linux服务器创建用户</a></li>
+    <li><a href="#通过同一局域网访问服务器">通过同一局域网访问服务器</a></li>
+    <li><a href="#在用户下创建pytorch环境">在用户下创建pytorch环境</a></li>
+  </ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2022</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">十六源</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.101.0</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/plantuml/rawdeflate.js"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/vendor/plantuml/jquery_plantuml.js"></script>
+<script src="https://shiliuyuan.github.io/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="https://shiliuyuan.github.io/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/utils.js"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/motion.js"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/affix.js"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/scrollspy.js"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/post-details.js"></script>
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/toc.js"></script>
+
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="https://shiliuyuan.github.io/js/search.js"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    extensions: ["tex2jax.js"],
+    jax: ["input/TeX", "output/HTML-CSS"],
+    tex2jax: {
+      inlineMath: [ ['$','$'] ],
+      displayMath: [ ['$$','$$'] ],
+      processEscapes: true
+    },
+    "HTML-CSS": { fonts: ["TeX"] }
+  });
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML' async></script>
+</body>
+</html>

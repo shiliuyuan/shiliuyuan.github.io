@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on 十六源</title>
+    <link>https://shiliuyuan.github.io/tags/go/</link>
+    <description>Recent content in Go on 十六源</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 01 Jul 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://shiliuyuan.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Go基础</title>
+      <link>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shiliuyuan.github.io/post/2022-07-01-go%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;p&gt;本文主要用于记录Go学习内容等。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
